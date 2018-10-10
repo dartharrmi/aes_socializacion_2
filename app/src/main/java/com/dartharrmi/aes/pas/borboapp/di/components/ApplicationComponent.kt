@@ -9,7 +9,6 @@ import dagger.android.AndroidInjector
 import javax.inject.Singleton
 
 /**
- * @author Guillermo Varela (guillermo.varela@wavy.global)
  */
 @Singleton
 @Suppress("UNUSED")

@@ -6,7 +6,6 @@ import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
 /**
- * @author Guillermo Varela (guillermo.varela@wavy.global)
  */
 @Module
 @Suppress("UNUSED")

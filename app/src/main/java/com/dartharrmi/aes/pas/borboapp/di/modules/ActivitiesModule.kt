@@ -6,7 +6,6 @@ import dagger.Module
 import dagger.Provides
 
 /**
- * @author Guillermo Varela (guillermo.varela@wavy.global)
  */
 @Module
 class ActivitiesModule {

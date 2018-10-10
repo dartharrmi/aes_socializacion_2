@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.dartharrmi.aes.pas.borboapp.R
 import com.dartharrmi.aes.pas.borboapp.model.Product
@@ -30,8 +31,9 @@ class ProductsAdapter(private val context: Context,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val runningSession = sessionsList[position]
 
+        holder.productItemTextView.setText(runningSession.name)
         Glide.with(context)
-                .load(runningSession.name)
+                .load(runningSession.url)
                 .into(holder.productItemImageView)
     }
 
@@ -51,5 +53,6 @@ class ProductsAdapter(private val context: Context,
 
     class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
         val productItemImageView: ImageView = item.itemProductImage
+        val productItemTextView: TextView = item.itemProductName
     }
 }

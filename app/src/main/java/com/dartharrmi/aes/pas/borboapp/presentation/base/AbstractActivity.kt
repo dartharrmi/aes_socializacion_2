@@ -10,8 +10,6 @@ import dagger.android.AndroidInjection
 
 /**
  * Base implementation for Activities.
- *
- * @author Guillermo Varela (guillermo.varela@wavy.global)
  */
 abstract class AbstractActivity<out T : BaseContract.BasePresenter<V>, in V : BaseContract.BaseView> : AppCompatActivity(), BaseContract.BaseView {
 

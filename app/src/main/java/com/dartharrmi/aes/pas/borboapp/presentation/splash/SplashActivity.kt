@@ -22,6 +22,7 @@ class SplashActivity : AbstractActivity<SplashContract.Presenter, SplashActivity
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        mAdapter = ProductsAdapter(this)
         mHistoryListManager = LinearLayoutManager(this)
         historyListRecyclerView.apply {
             setHasFixedSize(true)

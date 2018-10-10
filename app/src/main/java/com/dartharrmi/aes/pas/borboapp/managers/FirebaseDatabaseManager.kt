@@ -25,10 +25,9 @@ class FirebaseDatabaseManager {
 
                 override fun onDataChange(p0: DataSnapshot) {
                     if (p0.exists()) {
-                        val m = p0.getValue() as Map<*, *>?
-                        m?.let {
-                            val countries = m[mReferenceProducts] as List<HashMap<*, *>>
-                            val newList = countries.map { hashMap: HashMap<*, *> ->
+                        val m = p0.getValue() as List<HashMap<*, *>>
+                        m.let {
+                            val newList = m.map { hashMap: HashMap<*, *> ->
                                 Product(hashMap)
                             }.toCollection(ArrayList())
 

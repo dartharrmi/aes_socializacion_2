@@ -14,8 +14,8 @@ data class Product(val id: Long = 0,
     constructor(hashMap: HashMap<*, *>) : this(
             hashMap["id"] as Long,
             hashMap["name"] as String,
-            (hashMap["price"] as String).toDouble(),
-            (hashMap["quantity"] as String).toLong(),
-            (hashMap["idCatalog"] as String).toLong(),
+            (hashMap["price"] as Double),
+            (hashMap["quantity"] as Long),
+            (hashMap["idCatalog"] as Long),
             (hashMap["url"] as String))
 }
