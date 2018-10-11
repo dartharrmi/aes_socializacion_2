@@ -17,5 +17,6 @@ data class Product(val id: Long = 0,
             (hashMap["price"] as Double),
             (hashMap["quantity"] as Long),
             (hashMap["idCatalog"] as Long),
-            (hashMap["url"] as String))
+            (hashMap["url"] as String),
+            Sku((hashMap["sku"] as HashMap<*, *>)["id"] as Long, (hashMap["sku"] as HashMap<*, *>)["sku"] as String))
 }

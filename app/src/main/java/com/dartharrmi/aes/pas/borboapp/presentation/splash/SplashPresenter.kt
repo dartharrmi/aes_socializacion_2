@@ -3,6 +3,7 @@ package com.dartharrmi.aes.pas.borboapp.presentation.splash
 import android.annotation.SuppressLint
 import com.dartharrmi.aes.pas.borboapp.R
 import com.dartharrmi.aes.pas.borboapp.managers.FirebaseDatabaseManager
+import com.dartharrmi.aes.pas.borboapp.model.ClientRequest
 import com.dartharrmi.aes.pas.borboapp.presentation.base.AbstractPresenter
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -23,6 +24,19 @@ class SplashPresenter @Inject constructor(private val firebaseDatabaseManager: F
                 mView?.showProducts(it)
             }
         }, {
+        })
+    }
+
+    override fun createClientRequest(clientRequest: ClientRequest) {
+        mView?.showLoadingDialog(R.string.app_name)
+
+        firebaseDatabaseManager.createClientRequest(clientRequest).subscribe({
+            mView?.hideLoadingDialog()
+            if (it) {
+                mView?.showRequestConfirmation(R.string.app_name)
+            }
+        }, {
+
         })
     }
 }
